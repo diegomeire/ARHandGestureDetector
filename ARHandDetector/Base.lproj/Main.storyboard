@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="92r-6J-swZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -7,21 +7,81 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="Y87-SZ-gRF">
+            <objects>
+                <navigationController id="92r-6J-swZ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p1R-hn-0in">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CHb-zc-GhD" kind="relationship" relationship="rootViewController" id="Xyy-g2-pXC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dzT-Cc-V3y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1857" y="159"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="Bqb-95-akW">
+            <objects>
+                <viewController id="CHb-zc-GhD" customClass="MenuViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ifR-ti-vcU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="2kh-4D-9ve">
+                                <rect key="frame" x="124.5" y="420" width="165" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jha-9S-6xE">
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="30"/>
+                                        <state key="normal" title="UI Gesture Control"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="Ob7-dq-Lsr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIL-q0-5sM">
+                                        <rect key="frame" x="0.0" y="80" width="165" height="30"/>
+                                        <state key="normal" title="SceneKit Object Control"/>
+                                        <connections>
+                                            <segue destination="RHR-sq-J6c" kind="show" id="CRx-8Z-ufb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2kh-4D-9ve" firstAttribute="centerY" secondItem="eZW-7v-6ET" secondAttribute="centerY" id="4d4-7o-ZES"/>
+                            <constraint firstItem="2kh-4D-9ve" firstAttribute="centerX" secondItem="eZW-7v-6ET" secondAttribute="centerX" id="wdV-Gu-jrt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eZW-7v-6ET"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GH0-C6-bbb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IlA-dh-cid" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-984" y="159"/>
+        </scene>
+        <!--Gesture View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ARHandDetector" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="UIGestureViewController" customModule="ARHandDetector" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Wf-aJ-OiB">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                             </arscnView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJ8-Zz-mhH">
-                                <rect key="frame" x="268" y="44" width="126" height="78"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJ8-Zz-mhH">
+                                <rect key="frame" x="268" y="105" width="126" height="78"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126" id="JGb-Ey-oQW"/>
+                                    <constraint firstAttribute="height" constant="78" id="UKf-EB-6b7"/>
+                                </constraints>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -29,13 +89,16 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="LJ8-Zz-mhH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="17" id="1PZ-Av-g1W"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Wf-aJ-OiB" secondAttribute="trailing" id="2DB-uQ-0Is"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LJ8-Zz-mhH" secondAttribute="trailing" constant="20" id="POY-9J-MIw"/>
                             <constraint firstItem="5Wf-aJ-OiB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Vcc-2E-OJR"/>
                             <constraint firstItem="5Wf-aJ-OiB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="pRD-pS-T1o"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="5Wf-aJ-OiB" secondAttribute="top" constant="44" id="tor-1p-MRl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="0lr-WF-Squ"/>
                     <connections>
                         <outlet property="button" destination="LJ8-Zz-mhH" id="aIL-n8-hqZ"/>
                         <outlet property="sceneView" destination="5Wf-aJ-OiB" id="qok-gn-cCr"/>
@@ -43,7 +106,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+            <point key="canvasLocation" x="307" y="71"/>
+        </scene>
+        <!--Scene Kit Object Control View Controller-->
+        <scene sceneID="9e8-ey-8mz">
+            <objects>
+                <viewController id="RHR-sq-J6c" customClass="SceneKitObjectControlViewController" customModule="ARHandDetector" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jew-BM-sai">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f3Y-dE-hK9">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </arscnView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="NH9-sJ-vJX"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RMS-gZ-ecQ"/>
+                    <connections>
+                        <outlet property="sceneView" destination="f3Y-dE-hK9" id="0bA-Mr-YZl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2eW-lr-ezS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="307.24637681159425" y="736.60714285714278"/>
         </scene>
     </scenes>
 </document>

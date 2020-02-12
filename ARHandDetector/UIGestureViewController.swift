@@ -11,7 +11,7 @@ import ARKit
 import CoreML
 import Vision
 
-class ViewController: UIViewController, ARSessionDelegate {
+class UIGestureViewController: UIViewController, ARSessionDelegate {
 
     @IBOutlet weak var sceneView: ARSCNView!
     
