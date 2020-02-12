@@ -1,0 +1,663 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FACBEADF23F1A32500D0B23A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACBEADE23F1A32500D0B23A /* AppDelegate.swift */; };
+		FACBEAE123F1A32500D0B23A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACBEAE023F1A32500D0B23A /* SceneDelegate.swift */; };
+		FACBEAE323F1A32500D0B23A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACBEAE223F1A32500D0B23A /* ViewController.swift */; };
+		FACBEAE623F1A32500D0B23A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACBEAE423F1A32500D0B23A /* Main.storyboard */; };
+		FACBEAE823F1A32600D0B23A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACBEAE723F1A32600D0B23A /* Assets.xcassets */; };
+		FACBEAEB23F1A32600D0B23A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACBEAE923F1A32600D0B23A /* LaunchScreen.storyboard */; };
+		FACBEAF623F1A32600D0B23A /* ARHandDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACBEAF523F1A32600D0B23A /* ARHandDetectorTests.swift */; };
+		FACBEB0123F1A32600D0B23A /* ARHandDetectorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACBEB0023F1A32600D0B23A /* ARHandDetectorUITests.swift */; };
+		FACBEB0F23F1AF5A00D0B23A /* HandModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = FACBEB0E23F1AF5A00D0B23A /* HandModel.mlmodel */; };
+		FACBEB1123F203D800D0B23A /* HandDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACBEB1023F203D800D0B23A /* HandDetector.swift */; };
+		FACBEB1323F2209800D0B23A /* TouchNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACBEB1223F2209800D0B23A /* TouchNode.swift */; };
+		FACBEB1523F22ADC00D0B23A /* CVPixelBuffer+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACBEB1423F22ADC00D0B23A /* CVPixelBuffer+extension.swift */; };
+		FACBEB1723F22E1800D0B23A /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = FACBEB1623F22E1800D0B23A /* art.scnassets */; };
+		FACBEB2323F34D2600D0B23A /* HandGestureDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACBEB2223F34D2600D0B23A /* HandGestureDetector.swift */; };
+		FACBEB2523F3568F00D0B23A /* HandGesture.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = FACBEB2423F3568F00D0B23A /* HandGesture.mlmodel */; };
+		FACBEB2B23F35D4A00D0B23A /* CursorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACBEB2A23F35D4A00D0B23A /* CursorView.swift */; };
+		FACBEB2D23F36CF700D0B23A /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACBEB2C23F36CF700D0B23A /* UIView+extension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FACBEAF223F1A32600D0B23A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FACBEAD323F1A32500D0B23A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FACBEADA23F1A32500D0B23A;
+			remoteInfo = ARHandDetector;
+		};
+		FACBEAFD23F1A32600D0B23A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FACBEAD323F1A32500D0B23A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FACBEADA23F1A32500D0B23A;
+			remoteInfo = ARHandDetector;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FACBEADB23F1A32500D0B23A /* ARHandDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARHandDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FACBEADE23F1A32500D0B23A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FACBEAE023F1A32500D0B23A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FACBEAE223F1A32500D0B23A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FACBEAE523F1A32500D0B23A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FACBEAE723F1A32600D0B23A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FACBEAEA23F1A32600D0B23A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FACBEAEC23F1A32600D0B23A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FACBEAF123F1A32600D0B23A /* ARHandDetectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARHandDetectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FACBEAF523F1A32600D0B23A /* ARHandDetectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARHandDetectorTests.swift; sourceTree = "<group>"; };
+		FACBEAF723F1A32600D0B23A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FACBEAFC23F1A32600D0B23A /* ARHandDetectorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARHandDetectorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FACBEB0023F1A32600D0B23A /* ARHandDetectorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARHandDetectorUITests.swift; sourceTree = "<group>"; };
+		FACBEB0223F1A32600D0B23A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FACBEB0E23F1AF5A00D0B23A /* HandModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HandModel.mlmodel; sourceTree = "<group>"; };
+		FACBEB1023F203D800D0B23A /* HandDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandDetector.swift; sourceTree = "<group>"; };
+		FACBEB1223F2209800D0B23A /* TouchNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchNode.swift; sourceTree = "<group>"; };
+		FACBEB1423F22ADC00D0B23A /* CVPixelBuffer+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+extension.swift"; sourceTree = "<group>"; };
+		FACBEB1623F22E1800D0B23A /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		FACBEB2223F34D2600D0B23A /* HandGestureDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandGestureDetector.swift; sourceTree = "<group>"; };
+		FACBEB2423F3568F00D0B23A /* HandGesture.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HandGesture.mlmodel; sourceTree = "<group>"; };
+		FACBEB2A23F35D4A00D0B23A /* CursorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorView.swift; sourceTree = "<group>"; };
+		FACBEB2C23F36CF700D0B23A /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FACBEAD823F1A32500D0B23A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FACBEAEE23F1A32600D0B23A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FACBEAF923F1A32600D0B23A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FACBEAD223F1A32500D0B23A = {
+			isa = PBXGroup;
+			children = (
+				FACBEADD23F1A32500D0B23A /* ARHandDetector */,
+				FACBEAF423F1A32600D0B23A /* ARHandDetectorTests */,
+				FACBEAFF23F1A32600D0B23A /* ARHandDetectorUITests */,
+				FACBEADC23F1A32500D0B23A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FACBEADC23F1A32500D0B23A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FACBEADB23F1A32500D0B23A /* ARHandDetector.app */,
+				FACBEAF123F1A32600D0B23A /* ARHandDetectorTests.xctest */,
+				FACBEAFC23F1A32600D0B23A /* ARHandDetectorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FACBEADD23F1A32500D0B23A /* ARHandDetector */ = {
+			isa = PBXGroup;
+			children = (
+				FACBEB2923F35D3300D0B23A /* Views */,
+				FACBEB2823F35D0800D0B23A /* Extensions */,
+				FACBEB2723F35CE600D0B23A /* Detectors */,
+				FACBEB2623F35CD200D0B23A /* Models */,
+				FACBEADE23F1A32500D0B23A /* AppDelegate.swift */,
+				FACBEAE023F1A32500D0B23A /* SceneDelegate.swift */,
+				FACBEAE223F1A32500D0B23A /* ViewController.swift */,
+				FACBEAE423F1A32500D0B23A /* Main.storyboard */,
+				FACBEAE723F1A32600D0B23A /* Assets.xcassets */,
+				FACBEAE923F1A32600D0B23A /* LaunchScreen.storyboard */,
+				FACBEAEC23F1A32600D0B23A /* Info.plist */,
+				FACBEB1223F2209800D0B23A /* TouchNode.swift */,
+				FACBEB1623F22E1800D0B23A /* art.scnassets */,
+			);
+			path = ARHandDetector;
+			sourceTree = "<group>";
+		};
+		FACBEAF423F1A32600D0B23A /* ARHandDetectorTests */ = {
+			isa = PBXGroup;
+			children = (
+				FACBEAF523F1A32600D0B23A /* ARHandDetectorTests.swift */,
+				FACBEAF723F1A32600D0B23A /* Info.plist */,
+			);
+			path = ARHandDetectorTests;
+			sourceTree = "<group>";
+		};
+		FACBEAFF23F1A32600D0B23A /* ARHandDetectorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FACBEB0023F1A32600D0B23A /* ARHandDetectorUITests.swift */,
+				FACBEB0223F1A32600D0B23A /* Info.plist */,
+			);
+			path = ARHandDetectorUITests;
+			sourceTree = "<group>";
+		};
+		FACBEB2623F35CD200D0B23A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FACBEB2423F3568F00D0B23A /* HandGesture.mlmodel */,
+				FACBEB0E23F1AF5A00D0B23A /* HandModel.mlmodel */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		FACBEB2723F35CE600D0B23A /* Detectors */ = {
+			isa = PBXGroup;
+			children = (
+				FACBEB1023F203D800D0B23A /* HandDetector.swift */,
+				FACBEB2223F34D2600D0B23A /* HandGestureDetector.swift */,
+			);
+			path = Detectors;
+			sourceTree = "<group>";
+		};
+		FACBEB2823F35D0800D0B23A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FACBEB1423F22ADC00D0B23A /* CVPixelBuffer+extension.swift */,
+				FACBEB2C23F36CF700D0B23A /* UIView+extension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		FACBEB2923F35D3300D0B23A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FACBEB2A23F35D4A00D0B23A /* CursorView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FACBEADA23F1A32500D0B23A /* ARHandDetector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FACBEB0523F1A32600D0B23A /* Build configuration list for PBXNativeTarget "ARHandDetector" */;
+			buildPhases = (
+				FACBEAD723F1A32500D0B23A /* Sources */,
+				FACBEAD823F1A32500D0B23A /* Frameworks */,
+				FACBEAD923F1A32500D0B23A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ARHandDetector;
+			productName = ARHandDetector;
+			productReference = FACBEADB23F1A32500D0B23A /* ARHandDetector.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FACBEAF023F1A32600D0B23A /* ARHandDetectorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FACBEB0823F1A32600D0B23A /* Build configuration list for PBXNativeTarget "ARHandDetectorTests" */;
+			buildPhases = (
+				FACBEAED23F1A32600D0B23A /* Sources */,
+				FACBEAEE23F1A32600D0B23A /* Frameworks */,
+				FACBEAEF23F1A32600D0B23A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FACBEAF323F1A32600D0B23A /* PBXTargetDependency */,
+			);
+			name = ARHandDetectorTests;
+			productName = ARHandDetectorTests;
+			productReference = FACBEAF123F1A32600D0B23A /* ARHandDetectorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FACBEAFB23F1A32600D0B23A /* ARHandDetectorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FACBEB0B23F1A32600D0B23A /* Build configuration list for PBXNativeTarget "ARHandDetectorUITests" */;
+			buildPhases = (
+				FACBEAF823F1A32600D0B23A /* Sources */,
+				FACBEAF923F1A32600D0B23A /* Frameworks */,
+				FACBEAFA23F1A32600D0B23A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FACBEAFE23F1A32600D0B23A /* PBXTargetDependency */,
+			);
+			name = ARHandDetectorUITests;
+			productName = ARHandDetectorUITests;
+			productReference = FACBEAFC23F1A32600D0B23A /* ARHandDetectorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FACBEAD323F1A32500D0B23A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Diego Meire";
+				TargetAttributes = {
+					FACBEADA23F1A32500D0B23A = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					FACBEAF023F1A32600D0B23A = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = FACBEADA23F1A32500D0B23A;
+					};
+					FACBEAFB23F1A32600D0B23A = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = FACBEADA23F1A32500D0B23A;
+					};
+				};
+			};
+			buildConfigurationList = FACBEAD623F1A32500D0B23A /* Build configuration list for PBXProject "ARHandDetector" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FACBEAD223F1A32500D0B23A;
+			productRefGroup = FACBEADC23F1A32500D0B23A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FACBEADA23F1A32500D0B23A /* ARHandDetector */,
+				FACBEAF023F1A32600D0B23A /* ARHandDetectorTests */,
+				FACBEAFB23F1A32600D0B23A /* ARHandDetectorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FACBEAD923F1A32500D0B23A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FACBEAEB23F1A32600D0B23A /* LaunchScreen.storyboard in Resources */,
+				FACBEB1723F22E1800D0B23A /* art.scnassets in Resources */,
+				FACBEAE823F1A32600D0B23A /* Assets.xcassets in Resources */,
+				FACBEAE623F1A32500D0B23A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FACBEAEF23F1A32600D0B23A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FACBEAFA23F1A32600D0B23A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FACBEAD723F1A32500D0B23A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FACBEB2323F34D2600D0B23A /* HandGestureDetector.swift in Sources */,
+				FACBEB1523F22ADC00D0B23A /* CVPixelBuffer+extension.swift in Sources */,
+				FACBEAE323F1A32500D0B23A /* ViewController.swift in Sources */,
+				FACBEB1123F203D800D0B23A /* HandDetector.swift in Sources */,
+				FACBEB0F23F1AF5A00D0B23A /* HandModel.mlmodel in Sources */,
+				FACBEB1323F2209800D0B23A /* TouchNode.swift in Sources */,
+				FACBEB2B23F35D4A00D0B23A /* CursorView.swift in Sources */,
+				FACBEB2523F3568F00D0B23A /* HandGesture.mlmodel in Sources */,
+				FACBEADF23F1A32500D0B23A /* AppDelegate.swift in Sources */,
+				FACBEAE123F1A32500D0B23A /* SceneDelegate.swift in Sources */,
+				FACBEB2D23F36CF700D0B23A /* UIView+extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FACBEAED23F1A32600D0B23A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FACBEAF623F1A32600D0B23A /* ARHandDetectorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FACBEAF823F1A32600D0B23A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FACBEB0123F1A32600D0B23A /* ARHandDetectorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FACBEAF323F1A32600D0B23A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FACBEADA23F1A32500D0B23A /* ARHandDetector */;
+			targetProxy = FACBEAF223F1A32600D0B23A /* PBXContainerItemProxy */;
+		};
+		FACBEAFE23F1A32600D0B23A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FACBEADA23F1A32500D0B23A /* ARHandDetector */;
+			targetProxy = FACBEAFD23F1A32600D0B23A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FACBEAE423F1A32500D0B23A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FACBEAE523F1A32500D0B23A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FACBEAE923F1A32600D0B23A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FACBEAEA23F1A32600D0B23A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FACBEB0323F1A32600D0B23A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FACBEB0423F1A32600D0B23A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FACBEB0623F1A32600D0B23A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8BB88LDFV7;
+				INFOPLIST_FILE = ARHandDetector/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = diegomeire.ARHandDetector;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FACBEB0723F1A32600D0B23A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8BB88LDFV7;
+				INFOPLIST_FILE = ARHandDetector/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = diegomeire.ARHandDetector;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FACBEB0923F1A32600D0B23A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8BB88LDFV7;
+				INFOPLIST_FILE = ARHandDetectorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = diegomeire.ARHandDetectorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ARHandDetector.app/ARHandDetector";
+			};
+			name = Debug;
+		};
+		FACBEB0A23F1A32600D0B23A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8BB88LDFV7;
+				INFOPLIST_FILE = ARHandDetectorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = diegomeire.ARHandDetectorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ARHandDetector.app/ARHandDetector";
+			};
+			name = Release;
+		};
+		FACBEB0C23F1A32600D0B23A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8BB88LDFV7;
+				INFOPLIST_FILE = ARHandDetectorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = diegomeire.ARHandDetectorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ARHandDetector;
+			};
+			name = Debug;
+		};
+		FACBEB0D23F1A32600D0B23A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8BB88LDFV7;
+				INFOPLIST_FILE = ARHandDetectorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = diegomeire.ARHandDetectorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ARHandDetector;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FACBEAD623F1A32500D0B23A /* Build configuration list for PBXProject "ARHandDetector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FACBEB0323F1A32600D0B23A /* Debug */,
+				FACBEB0423F1A32600D0B23A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FACBEB0523F1A32600D0B23A /* Build configuration list for PBXNativeTarget "ARHandDetector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FACBEB0623F1A32600D0B23A /* Debug */,
+				FACBEB0723F1A32600D0B23A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FACBEB0823F1A32600D0B23A /* Build configuration list for PBXNativeTarget "ARHandDetectorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FACBEB0923F1A32600D0B23A /* Debug */,
+				FACBEB0A23F1A32600D0B23A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FACBEB0B23F1A32600D0B23A /* Build configuration list for PBXNativeTarget "ARHandDetectorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FACBEB0C23F1A32600D0B23A /* Debug */,
+				FACBEB0D23F1A32600D0B23A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FACBEAD323F1A32500D0B23A /* Project object */;
+}
