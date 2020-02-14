@@ -25,9 +25,7 @@ class SceneKitObjectControlViewController: UIViewController, ARSessionDelegate {
     var holdingHandsCounter: Int = 0
     
     let fire  = SCNParticleSystem(named: "fire.scnp",  inDirectory: "art.scnassets")
-    let smoke = SCNParticleSystem(named: "smoke.scnp", inDirectory: "art.scnassets")
     
-   
     func moveObject( at point: CGPoint){
         
         // Compute near & far points
@@ -82,7 +80,6 @@ class SceneKitObjectControlViewController: UIViewController, ARSessionDelegate {
         
         touchNode = SCNNode(geometry: nil)
         touchNode.addParticleSystem(fire!)
-        touchNode.addParticleSystem(smoke!)
         
         sceneView.scene.rootNode.addChildNode(touchNode)
         
