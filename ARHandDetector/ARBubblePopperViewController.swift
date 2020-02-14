@@ -99,26 +99,22 @@ class ARBubblePopperViewController: UIViewController, ARSessionDelegate {
                     }
 
                     // We use a coreVideo function to get the image coordinate from the normalized point
-                    let imageFingerPoint = VNImagePointForNormalizedPoint(tipPoint, Int(self.view.bounds.size.width), Int(self.view.bounds.size.height))
+                    let imageFingerPoint = VNImagePointForNormalizedPoint( tipPoint,
+                                                                           Int(self.view.bounds.size.width),
+                                                                           Int(self.view.bounds.size.height))
 
                     
                     // And here again we need to hitTest to translate from 2D coordinates to 3D coordinates
                     let hitTestResults = self.sceneView.hitTest(imageFingerPoint)
                     guard let hitTestResult = hitTestResults.first else { return }
                     guard let node = hitTestResults.first?.node,
-                        let bubble = node.parent as? Bubble,
-                        let hitResult = hitTestResults.first else {
-                            return
+                          let bubble = node.parent as? Bubble,
+                          let hitResult = hitTestResults.first else {
+                          return
                     }
                     
-                    let n = SCNNode()
-                    n.position = bubble.position
-                    let pop  = SCNParticleSystem(named: "bubblePop.scnp",  inDirectory: "art.scnassets")
-                    n.addParticleSystem(pop!)
-                    self.sceneView.scene.rootNode.addChildNode(n)
-                    
-                    
-                    bubble.removeFromParentNode()
+                   
+                    bubble.pop()
 
                     
                 }
@@ -151,18 +147,22 @@ class ARBubblePopperViewController: UIViewController, ARSessionDelegate {
     func addBubbles( on node: SCNNode){
         
        bubbleScheduler = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (Timer) in
-       
-            for _ in 0...50{
-                
-                let randomX = Float.random(in: -0.5...0.5)
-                let randomY = Float.random(in: -0.5...0.5)
-                let randomZ = Float.random(in: -0.5...0.5)
-                
-                let bubbleNode = Bubble()
-                node.addChildNode(bubbleNode)
-                bubbleNode.position = SCNVector3( x: randomX, y: randomY, z: randomZ)
+           
+            DispatchQueue.global(qos: .background).async {
+                for _ in 0...50{
+                    
+                    let randomX = Float.random(in: -0.5...0.5)
+                    let randomY = Float.random(in: -0.5...0.5)
+                    let randomZ = Float.random(in: -0.5...0.5)
+                    
+                    let bubbleNode = Bubble()
+                    node.addChildNode(bubbleNode)
+                    bubbleNode.position = SCNVector3( x: randomX, y: randomY, z: randomZ)
 
+                }
             }
+        
+            
         })
    
     }

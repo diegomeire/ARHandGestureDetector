@@ -166,7 +166,7 @@ class SceneKitObjectControlViewController: UIViewController, ARSessionDelegate {
             // Create UIImage from CVPixelBuffer
             previewImage = UIImage(ciImage: CIImage(cvPixelBuffer: outBuffer))
 
-            normalizedFingerTip = outBuffer.searchTopPoint()
+            normalizedFingerTip = outBuffer.searchMidPoint()
            
         }
         
@@ -190,7 +190,7 @@ class SceneKitObjectControlViewController: UIViewController, ARSessionDelegate {
                    }
                }
                 
-               if (self.holdingHandsCounter > 5){
+               if (self.holdingHandsCounter > 3){
                     self.fire?.birthRate = 0
                }
                else{

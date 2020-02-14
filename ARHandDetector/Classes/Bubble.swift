@@ -14,32 +14,25 @@ class Bubble: SCNNode {
     
     var bubbleNode : SCNNode?
     
+    
     override init() {
         
-        let randomSize = CGFloat.random(in: 0.01...0.05)
-        let bubbleGeometry = SCNPlane(width: randomSize, height: randomSize)
-        bubbleNode = SCNNode( geometry: bubbleGeometry)
+        let randomSize = CGFloat.random(in: 0.1...0.2)
         
-        let bubbleMaterial = SCNMaterial()
-        bubbleMaterial.lightingModel = .constant
-        bubbleMaterial.diffuse.contents = UIImage(with: "art.scnassets/bubble.png")
-        bubbleMaterial.blendMode = .add
-        
-        
-        bubbleNode!.geometry!.materials = [bubbleMaterial]
-        let constraint = SCNBillboardConstraint()
-        constraint.freeAxes = [ SCNBillboardAxis.all ]
-        bubbleNode!.constraints = [constraint]
-        bubbleNode!.renderingOrder = 1
+        let bubbleScene = SCNScene(named: "art.scnassets/bubble.scn")
+        bubbleNode = bubbleScene?.rootNode.childNodes[0]
         
         super.init()
         
         self.addChildNode(bubbleNode!)
+        bubbleNode?.scale = SCNVector3(0.001, 0.001, 0.001)
+        bubbleNode!.renderingOrder = 1
         
+       // particles!.birthRate = 0
            
         bubbleNode!.runAction(SCNAction.scale(to: 0, duration: 0))
         bubbleNode!.runAction(SCNAction.repeatForever(
-                                SCNAction.group([ SCNAction.scale(to: 1,
+                                SCNAction.group([ SCNAction.scale(to: randomSize,
                                                                   duration: 0.1),
                                                   SCNAction.move(by: SCNVector3(0, 0.5, 0),
                                                                  duration: TimeInterval.random(in: 10...20)),
@@ -54,6 +47,19 @@ class Bubble: SCNNode {
                                 )
                             )
      
+    }
+    
+    func pop(){
+        bubbleNode!.geometry?.firstMaterial?.diffuse.contents = UIImage( with: "art.scnassets/bubblePop.png")
+        bubbleNode!.runAction(SCNAction.scale(to: CGFloat((bubbleNode?.scale.x)! * Float(1.2)),
+                                              duration: 0.5))
+        
+        
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (Timer) in
+            self.bubbleNode?.removeAllActions()
+            self.bubbleNode?.removeFromParentNode()
+            self.bubbleNode = nil
+        }
     }
     
     deinit {
