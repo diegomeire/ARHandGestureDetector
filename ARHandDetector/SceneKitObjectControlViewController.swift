@@ -21,28 +21,13 @@ class SceneKitObjectControlViewController: UIViewController, ARSessionDelegate {
     var currentBuffer: CVPixelBuffer?
     
     var touchNode = SCNNode()
+    
+    var holdingHandsCounter: Int = 0
+    
+    let fire  = SCNParticleSystem(named: "fire.scnp",  inDirectory: "art.scnassets")
+    let smoke = SCNParticleSystem(named: "smoke.scnp", inDirectory: "art.scnassets")
+    
    
-    ///
-    func showAlert( _ message: String ){
-        
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-              switch action.style{
-              case .default:
-                    print("default")
-
-              case .cancel:
-                    print("cancel")
-
-              case .destructive:
-                    print("destructive")
-              @unknown default:
-                fatalError()
-            }}))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    
     func moveObject( at point: CGPoint){
         
         // Compute near & far points
@@ -95,8 +80,9 @@ class SceneKitObjectControlViewController: UIViewController, ARSessionDelegate {
     
         sceneView.scene = SCNScene(named: "art.scnassets/default.scn")!
         
-        let sphere = SCNSphere(radius: 1)
-        touchNode = SCNNode(geometry: sphere)
+        touchNode = SCNNode(geometry: nil)
+        touchNode.addParticleSystem(fire!)
+        touchNode.addParticleSystem(smoke!)
         
         sceneView.scene.rootNode.addChildNode(touchNode)
         
@@ -187,7 +173,7 @@ class SceneKitObjectControlViewController: UIViewController, ARSessionDelegate {
            
         }
         
-        /*
+        
         handGestureDetector.performDetection(inputBuffer: buffer) { (retorno, _) in
             
                var symbol = "❎"
@@ -208,14 +194,14 @@ class SceneKitObjectControlViewController: UIViewController, ARSessionDelegate {
                }
                 
                if (self.holdingHandsCounter > 5){
-                  self.cursorView?.setColor(.red)
+                    self.fire?.birthRate = 0
                }
                else{
-                    self.cursorView?.setColor(.blue)
+                    self.fire?.birthRate = 150
                }
             
             print( symbol )
-        }*/
+        }
         
     }
     

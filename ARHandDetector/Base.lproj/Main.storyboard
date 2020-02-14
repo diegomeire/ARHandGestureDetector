@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="2kh-4D-9ve">
-                                <rect key="frame" x="124.5" y="420" width="165" height="110"/>
+                                <rect key="frame" x="124.5" y="380" width="165" height="190"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jha-9S-6xE">
                                         <rect key="frame" x="0.0" y="0.0" width="165" height="30"/>
@@ -46,6 +46,13 @@
                                         <state key="normal" title="SceneKit Object Control"/>
                                         <connections>
                                             <segue destination="RHR-sq-J6c" kind="show" id="CRx-8Z-ufb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5VG-Q9-WQM">
+                                        <rect key="frame" x="0.0" y="160" width="165" height="30"/>
+                                        <state key="normal" title="AR Bubbles"/>
+                                        <connections>
+                                            <segue destination="rs5-CQ-lbR" kind="show" id="liL-RT-sva"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -106,7 +113,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="307" y="71"/>
+            <point key="canvasLocation" x="13" y="-205"/>
+        </scene>
+        <!--Bubble Popper View Controller-->
+        <scene sceneID="uII-t5-moL">
+            <objects>
+                <viewController id="rs5-CQ-lbR" customClass="ARBubblePopperViewController" customModule="ARHandDetector" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uAf-X0-8X2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xkd-v1-qi3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </arscnView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hCU-Jv-TV4" firstAttribute="trailing" secondItem="Xkd-v1-qi3" secondAttribute="trailing" id="Xek-Kr-sjz"/>
+                            <constraint firstItem="hCU-Jv-TV4" firstAttribute="top" secondItem="Xkd-v1-qi3" secondAttribute="top" constant="88" id="j36-fh-eEj"/>
+                            <constraint firstItem="Xkd-v1-qi3" firstAttribute="bottom" secondItem="hCU-Jv-TV4" secondAttribute="bottom" constant="34" id="r5C-oc-NAF"/>
+                            <constraint firstItem="Xkd-v1-qi3" firstAttribute="leading" secondItem="hCU-Jv-TV4" secondAttribute="leading" id="sJk-o6-tnk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hCU-Jv-TV4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kxz-Xh-cWc"/>
+                    <connections>
+                        <outlet property="sceneView" destination="Xkd-v1-qi3" id="Uda-eA-SgA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k1u-cN-c3Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12" y="589"/>
         </scene>
         <!--Scene Kit Object Control View Controller-->
         <scene sceneID="9e8-ey-8mz">
@@ -131,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2eW-lr-ezS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="307.24637681159425" y="736.60714285714278"/>
+            <point key="canvasLocation" x="981" y="159"/>
         </scene>
     </scenes>
 </document>

@@ -1,29 +1,30 @@
 //
-//  ViewController.swift
+//  ARBubblePopperViewController.swift
 //  ARHandDetector
 //
-//  Created by Diego Meire on 10/02/20.
+//  Created by Diego Meire on 13/02/20.
 //  Copyright © 2020 Diego Meire. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import ARKit
 import CoreML
 import Vision
 
-class UIGestureViewController: UIViewController, ARSessionDelegate {
+class ARBubblePopperViewController: UIViewController, ARSessionDelegate {
 
     @IBOutlet weak var sceneView: ARSCNView!
-    
-    @IBOutlet weak var button: UIButton!
     
     var previewView = UIImageView()
     
     var currentBuffer: CVPixelBuffer?
     
-    var cursorView: CursorView?
-   
-    var holdingHandsCounter: Int = 0
+    var bubbles = [Bubble]()
+    
+    var spawnedBubbles = false
+    
+    var bubbleScheduler : Timer?
     
     override func loadView() {
         super.loadView()
@@ -45,10 +46,8 @@ class UIGestureViewController: UIViewController, ARSessionDelegate {
     
         sceneView.scene = SCNScene(named: "art.scnassets/default.scn")!
         
+        addBubbles(on: sceneView.scene.rootNode)
         
-        cursorView = CursorView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-       
-        view.addSubview(cursorView!)
     }
     
     override func viewDidLoad() {
@@ -95,43 +94,32 @@ class UIGestureViewController: UIViewController, ARSessionDelegate {
                     // Release currentBuffer when finished to allow processing next frame
                     self.currentBuffer = nil
 
-                    self.cursorView?.isHidden = true
-                    
                     guard let tipPoint = normalizedFingerTip else {
-                        self.button.backgroundColor = .clear
-                        self.button.setTitleColor(.white, for: .normal)
                         return
                     }
 
                     // We use a coreVideo function to get the image coordinate from the normalized point
                     let imageFingerPoint = VNImagePointForNormalizedPoint(tipPoint, Int(self.view.bounds.size.width), Int(self.view.bounds.size.height))
 
-                    self.cursorView?.frame.origin = CGPoint(x: imageFingerPoint.x - ( (self.cursorView?.frame.width)! / 2 ),
-                                                              y: imageFingerPoint.y - ( (self.cursorView?.frame.height)! / 2 ))
                     
-                    let scenePoint = self.sceneView.unprojectPoint(SCNVector3(imageFingerPoint.x, imageFingerPoint.y, 0))
-                    
-                    
-                    self.cursorView?.isHidden = false
-                    
-                    if ((self.cursorView?.overlaps(other: self.button, in: self))!){
-                        
-                        self.alpha = self.alpha + 0.1
-                        
-                        self.button.backgroundColor = UIColor( red: 1, green: 1, blue: 1, alpha: self.alpha)
-                        self.button.setTitleColor(.black, for: .normal)
-                        if (self.alpha >= 1.0){
-                            self.button.backgroundColor = .black
-                            self.button.setTitleColor(.white, for: .normal)
-                            
-                            self.showAlert("Button pressed!")
-                        }
+                    // And here again we need to hitTest to translate from 2D coordinates to 3D coordinates
+                    let hitTestResults = self.sceneView.hitTest(imageFingerPoint)
+                    guard let hitTestResult = hitTestResults.first else { return }
+                    guard let node = hitTestResults.first?.node,
+                        let bubble = node.parent as? Bubble,
+                        let hitResult = hitTestResults.first else {
+                            return
                     }
-                    else{
-                        self.button.backgroundColor = .clear
-                        self.button.tintColor = .white
-                        self.alpha = 0
-                    }
+                    
+                    let n = SCNNode()
+                    n.position = bubble.position
+                    let pop  = SCNParticleSystem(named: "bubblePop.scnp",  inDirectory: "art.scnassets")
+                    n.addParticleSystem(pop!)
+                    self.sceneView.scene.rootNode.addChildNode(n)
+                    
+                    
+                    bubble.removeFromParentNode()
+
                     
                 }
             }
@@ -147,36 +135,36 @@ class UIGestureViewController: UIViewController, ARSessionDelegate {
            
         }
         
-        /*
-        handGestureDetector.performDetection(inputBuffer: buffer) { (retorno, _) in
-            
-               var symbol = "❎"
-               let topPrediction = retorno.components(separatedBy: "\n")[0]
-               let topPredictionName = retorno.components(separatedBy: ":")[0].trimmingCharacters(in: .whitespaces)
-               // Only display a prediction if confidence is above 1%
-               let topPredictionScore:Float? = Float(topPrediction.components(separatedBy: ":")[1].trimmingCharacters(in: .whitespaces))
-               if (topPredictionScore != nil && topPredictionScore! > 0.01) {
-                   if (topPredictionName == "fist-UB-RHand") {
-                        symbol = "👊"
-                        self.holdingHandsCounter = self.holdingHandsCounter + 1
-                        
-                    }
-                   if (topPredictionName == "FIVE-UB-RHand") {
-                      symbol = "🖐"
-                      self.holdingHandsCounter = 0
-                   }
-               }
-                
-               if (self.holdingHandsCounter > 5){
-                  self.cursorView?.setColor(.red)
-               }
-               else{
-                    self.cursorView?.setColor(.blue)
-               }
-            
-            print( symbol )
-        }*/
         
+    }
+    
+    
+    
+    func initializeBubblesTap( onView view: UIView){
+        
+        spawnedBubbles = false
+        bubbleScheduler = nil
+        
+    }
+    
+    
+    func addBubbles( on node: SCNNode){
+        
+       bubbleScheduler = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (Timer) in
+       
+            for _ in 0...50{
+                
+                let randomX = Float.random(in: -0.5...0.5)
+                let randomY = Float.random(in: -0.5...0.5)
+                let randomZ = Float.random(in: -0.5...0.5)
+                
+                let bubbleNode = Bubble()
+                node.addChildNode(bubbleNode)
+                bubbleNode.position = SCNVector3( x: randomX, y: randomY, z: randomZ)
+
+            }
+        })
+   
     }
     
 }

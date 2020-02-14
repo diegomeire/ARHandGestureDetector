@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		FAC282F723F453F700C4C195 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC282F623F453F700C4C195 /* MenuViewController.swift */; };
 		FAC282F923F4572400C4C195 /* SceneKitObjectControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC282F823F4572400C4C195 /* SceneKitObjectControlViewController.swift */; };
+		FAC282FB23F57D7800C4C195 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC282FA23F57D7800C4C195 /* UIViewController+extension.swift */; };
+		FAC282FD23F5874E00C4C195 /* ARBubblePopperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC282FC23F5874E00C4C195 /* ARBubblePopperViewController.swift */; };
+		FAC2830023F58CD000C4C195 /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC282FF23F58CD000C4C195 /* Bubble.swift */; };
+		FAC2830223F58D7600C4C195 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2830123F58D7600C4C195 /* UIImage+extension.swift */; };
 		FACBEADF23F1A32500D0B23A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACBEADE23F1A32500D0B23A /* AppDelegate.swift */; };
 		FACBEAE123F1A32500D0B23A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACBEAE023F1A32500D0B23A /* SceneDelegate.swift */; };
 		FACBEAE323F1A32500D0B23A /* UIGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACBEAE223F1A32500D0B23A /* UIGestureViewController.swift */; };
@@ -48,6 +52,10 @@
 /* Begin PBXFileReference section */
 		FAC282F623F453F700C4C195 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		FAC282F823F4572400C4C195 /* SceneKitObjectControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneKitObjectControlViewController.swift; sourceTree = "<group>"; };
+		FAC282FA23F57D7800C4C195 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
+		FAC282FC23F5874E00C4C195 /* ARBubblePopperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBubblePopperViewController.swift; sourceTree = "<group>"; };
+		FAC282FF23F58CD000C4C195 /* Bubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
+		FAC2830123F58D7600C4C195 /* UIImage+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
 		FACBEADB23F1A32500D0B23A /* ARHandDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARHandDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACBEADE23F1A32500D0B23A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FACBEAE023F1A32500D0B23A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,8 +112,19 @@
 				FACBEAE223F1A32500D0B23A /* UIGestureViewController.swift */,
 				FAC282F623F453F700C4C195 /* MenuViewController.swift */,
 				FAC282F823F4572400C4C195 /* SceneKitObjectControlViewController.swift */,
+				FAC282FA23F57D7800C4C195 /* UIViewController+extension.swift */,
+				FAC282FC23F5874E00C4C195 /* ARBubblePopperViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FAC282FE23F58CC700C4C195 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FAC282FF23F58CD000C4C195 /* Bubble.swift */,
+				FAC2830123F58D7600C4C195 /* UIImage+extension.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		FACBEAD223F1A32500D0B23A = {
@@ -131,6 +150,7 @@
 		FACBEADD23F1A32500D0B23A /* ARHandDetector */ = {
 			isa = PBXGroup;
 			children = (
+				FAC282FE23F58CC700C4C195 /* Classes */,
 				FAC282F523F4527000C4C195 /* View Controllers */,
 				FACBEB2923F35D3300D0B23A /* Views */,
 				FACBEB2823F35D0800D0B23A /* Extensions */,
@@ -335,6 +355,9 @@
 			files = (
 				FACBEB2323F34D2600D0B23A /* HandGestureDetector.swift in Sources */,
 				FAC282F923F4572400C4C195 /* SceneKitObjectControlViewController.swift in Sources */,
+				FAC282FB23F57D7800C4C195 /* UIViewController+extension.swift in Sources */,
+				FAC2830023F58CD000C4C195 /* Bubble.swift in Sources */,
+				FAC282FD23F5874E00C4C195 /* ARBubblePopperViewController.swift in Sources */,
 				FACBEB1523F22ADC00D0B23A /* CVPixelBuffer+extension.swift in Sources */,
 				FACBEAE323F1A32500D0B23A /* UIGestureViewController.swift in Sources */,
 				FACBEB1123F203D800D0B23A /* HandDetector.swift in Sources */,
@@ -344,6 +367,7 @@
 				FAC282F723F453F700C4C195 /* MenuViewController.swift in Sources */,
 				FACBEB2523F3568F00D0B23A /* HandGesture.mlmodel in Sources */,
 				FACBEADF23F1A32500D0B23A /* AppDelegate.swift in Sources */,
+				FAC2830223F58D7600C4C195 /* UIImage+extension.swift in Sources */,
 				FACBEAE123F1A32500D0B23A /* SceneDelegate.swift in Sources */,
 				FACBEB2D23F36CF700D0B23A /* UIView+extension.swift in Sources */,
 			);
