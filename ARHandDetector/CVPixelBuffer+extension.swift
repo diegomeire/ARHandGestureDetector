@@ -8,8 +8,11 @@
 
 import CoreVideo
 
+
+
 extension CVPixelBuffer {
     
+    public static var whitePixelThreshold = 200
     
     /// *****************************************
     func searchTopPoint() -> CGPoint? {
@@ -57,7 +60,7 @@ extension CVPixelBuffer {
         }
         
        // We count the number of pixels in our frame. If the number is too low then we return nil because it means it's detecting a false positive
-        if whitePixelsCount < 100 {
+        if whitePixelsCount < CVBuffer.whitePixelThreshold {
             returnPoint = nil
         }
         
@@ -115,7 +118,7 @@ extension CVPixelBuffer {
         }
         
        // We count the number of pixels in our frame. If the number is too low then we return nil because it means it's detecting a false positive
-        if whitePixelsCount < 100 {
+        if whitePixelsCount < CVBuffer.whitePixelThreshold  {
             returnPoint = nil
         }
         
@@ -194,7 +197,7 @@ extension CVPixelBuffer {
         }
         
        // We count the number of pixels in our frame. If the number is too low then we return nil because it means it's detecting a false positive
-        if whitePixelsCount < 100 {
+        if whitePixelsCount < CVBuffer.whitePixelThreshold  {
             returnPoint = nil
         }
         

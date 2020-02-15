@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA14A11F23F8A60A0039AE4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA14A11D23F8A60A0039AE4A /* Assets.xcassets */; };
 		FAC282F723F453F700C4C195 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC282F623F453F700C4C195 /* MenuViewController.swift */; };
 		FAC282F923F4572400C4C195 /* SceneKitObjectControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC282F823F4572400C4C195 /* SceneKitObjectControlViewController.swift */; };
 		FAC282FB23F57D7800C4C195 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC282FA23F57D7800C4C195 /* UIViewController+extension.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA14A11D23F8A60A0039AE4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAC282F623F453F700C4C195 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		FAC282F823F4572400C4C195 /* SceneKitObjectControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneKitObjectControlViewController.swift; sourceTree = "<group>"; };
 		FAC282FA23F57D7800C4C195 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		FACBEAD223F1A32500D0B23A = {
 			isa = PBXGroup;
 			children = (
+				FA14A11D23F8A60A0039AE4A /* Assets.xcassets */,
 				FACBEADD23F1A32500D0B23A /* ARHandDetector */,
 				FACBEAF423F1A32600D0B23A /* ARHandDetectorTests */,
 				FACBEAFF23F1A32600D0B23A /* ARHandDetectorUITests */,
@@ -329,6 +332,7 @@
 				FACBEB1723F22E1800D0B23A /* art.scnassets in Resources */,
 				FACBEAE823F1A32600D0B23A /* Assets.xcassets in Resources */,
 				FACBEAE623F1A32500D0B23A /* Main.storyboard in Resources */,
+				FA14A11F23F8A60A0039AE4A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -142,19 +142,7 @@ class SceneKitObjectControlViewController: UIViewController, ARSessionDelegate {
                     
                     self.moveObject(at: imageFingerPoint)
                     self.touchNode.isHidden = false
-                    
-                    
-                    /*
-                    
-                    // And here again we need to hitTest to translate from 2D coordinates to 3D coordinates
-                    let hitTestResults = self.sceneView.hitTest(imageFingerPoint, types: .existingPlaneUsingExtent)
-                    guard let hitTestResult = hitTestResults.first else { return }
 
-                    // We position our touchNode slighlty above the plane (1cm).
-                    self.touchNode.simdTransform = hitTestResult.worldTransform
-                    self.touchNode.position.y += 0.01
-                    self.touchNode.isHidden = false
-                     */
                     
                 }
             }
@@ -170,7 +158,10 @@ class SceneKitObjectControlViewController: UIViewController, ARSessionDelegate {
            
         }
         
-        
+          /// If you want to use gestures to stop the fire make sure this block is called
+            /// Every time the uses closes the hand, the fire stops
+         
+         
         handGestureDetector.performDetection(inputBuffer: buffer) { (retorno, _) in
             
                var symbol = "❎"
@@ -190,7 +181,7 @@ class SceneKitObjectControlViewController: UIViewController, ARSessionDelegate {
                    }
                }
                 
-               if (self.holdingHandsCounter > 3){
+               if (self.holdingHandsCounter > 5){
                     self.fire?.birthRate = 0
                }
                else{
@@ -199,6 +190,7 @@ class SceneKitObjectControlViewController: UIViewController, ARSessionDelegate {
             
             print( symbol )
         }
+        
         
     }
     

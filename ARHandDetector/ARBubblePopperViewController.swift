@@ -46,13 +46,15 @@ class ARBubblePopperViewController: UIViewController, ARSessionDelegate {
     
         sceneView.scene = SCNScene(named: "art.scnassets/default.scn")!
         
-        addBubbles(on: sceneView.scene.rootNode)
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    
+        addBubbles(on: sceneView.scene.rootNode)
+      
     }
 
     
@@ -146,10 +148,9 @@ class ARBubblePopperViewController: UIViewController, ARSessionDelegate {
     
     func addBubbles( on node: SCNNode){
         
-       bubbleScheduler = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (Timer) in
+       bubbleScheduler = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { (Timer) in
            
-            DispatchQueue.global(qos: .background).async {
-                for _ in 0...50{
+                for _ in 0...10{
                     
                     let randomX = Float.random(in: -0.5...0.5)
                     let randomY = Float.random(in: -0.5...0.5)
@@ -160,8 +161,7 @@ class ARBubblePopperViewController: UIViewController, ARSessionDelegate {
                     bubbleNode.position = SCNVector3( x: randomX, y: randomY, z: randomZ)
 
                 }
-            }
-        
+
             
         })
    
